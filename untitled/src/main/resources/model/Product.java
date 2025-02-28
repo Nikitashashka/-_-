@@ -25,4 +25,7 @@ public class Product {
     @Column(nullable = false)
     private BigDecimal calories;
 
+    @OneToMany(mappedBy = "product", cascade = CascadeType.ALL, orphanRemoval = true)
+    private Set<ProductInfo> productInfos;
+
 }
